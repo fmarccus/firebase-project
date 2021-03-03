@@ -1,5 +1,7 @@
 const formdata = $("#formdata");
 const tasklist = document.querySelector('#tasklist');
+var column;
+var card;
 
 
 
@@ -22,8 +24,8 @@ formdata.on('submit', (e) => {
 })
 
 function render(doc) {
-    let column = document.createElement('div');
-    let card = document.createElement('div');
+    column = document.createElement('div');
+    card = document.createElement('div');
     let cardbody = document.createElement('div');
     let cardtitle = document.createElement('h4');
     let objective = document.createElement('li');
