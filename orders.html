@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Information</title>
+    <title>Check Orders</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
@@ -74,8 +74,8 @@
                 <a class="nav-link text-white" href="tasks.html"><i class="fas fa-tasks me-1"></i>Tasks/Meetings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="purchases.html"><i class="fas fa-shopping-cart me-1"></i>
-                    Purchases</a>
+                <a class="nav-link text-white" href="orders.html"><i class="fas fa-shopping-cart me-1"></i>
+                    Orders</a>
             </li>
         </ul>
     </section>
@@ -90,7 +90,7 @@
                         <div class="col-md-12">
                             <div class="card ">
                                 <div class="card-body">
-                                    <h4 class="card-title text-center mb-4">Create Purchase</h4>
+                                    <h4 class="card-title text-center mb-4">Create Order</h4>
                                     <form method="post" id="formdata">
                                         <div class="row">
                                             <div class="col-md-12 mb-2">
@@ -99,9 +99,9 @@
                                                         <span class="input-group-text" id="basic-addon1"><i
                                                                 class="fas fa-user me-1"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="customer"
-                                                        id="customer" aria-describedby="helpId"
-                                                        placeholder="Customer Name" required>
+                                                    <input type="text" class="form-control" name="supplier"
+                                                        id="supplier" aria-describedby="helpId"
+                                                        placeholder="Supplier Name" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-12  mb-2">
@@ -161,9 +161,11 @@
                                             </div>
                                             <div class="col-md-12 mb-2">
                                                 <input type="hidden" class="form-control" name="date" id="date">
+                                                <input type="hidden" name="document" id="document">
                                             </div>
                                             <div class="col-md-12 text-end">
-                                                <button type="submit" class="btn btn-sm btn-primary">Done</button>
+                                                <button type="submit" class="btn btn-sm btn-primary me-1">Add</button>
+                                                <button type="button" id="update" class="btn btn-sm btn-light">Update</button>
                                             </div>
                                         </div>
                                     </form>
@@ -181,19 +183,21 @@
                         <div class="col-md-12">
                             <div class="card text-truncate">
                                 <div class="card-body">
-                                    <h4 class="card-title text-center mb-4">Purchases</h4>
+                                    <h4 class="card-title text-center mb-4">Orders</h4>
                                     <div class="table-responsive">
                                         <table class="table table-hover table-borderless table-sm table-inverse">
                                             <thead class="thead-inverse">
                                                 <tr>
-                                                    <th>Customer</th>
-                                                    <th>Address</th>
+                                                    <th colspan="2">Actions</th>
+                                                    <th>Supplier</th>
+                                                    <th>Delivery Address</th>
                                                     <th>Contact</th>
                                                     <th>Order</th>
                                                     <th>Amount</th>
                                                     <th>Quantity</th>
                                                     <th>Total</th>
                                                     <th>Date</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody id="tabledata">
@@ -216,7 +220,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>
-    <script src="/javascripts/purchases.js"></script>
+    <script src="/javascripts/orders.js"></script>
 </body>
 
 </html>
