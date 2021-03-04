@@ -19,6 +19,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body class="bg-light">
@@ -66,14 +67,14 @@
                     Employees</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fas fa-boxes me-1"></i>Inventory</a>
+                <a class="nav-link text-white" href="inventories.html"><i class="fas fa-boxes me-1"></i>Inventory</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="tasks.html"><i class="fas fa-tasks me-1"></i>Tasks/Meetings</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="orders.html"><i class="fas fa-shopping-cart me-1"></i>
-                    Orders</a>
+                    Pending Orders</a>
             </li>
         </ul>
     </section>
@@ -124,7 +125,7 @@
                                             </div>
                                             <input type="hidden" id="date" name="id">
                                             <div class="col-md-12 text-end">
-                                                <button type="submit" class="btn btn-sm btn-primary">Done</button>
+                                                <button type="submit" class="btn btn-sm btn-primary">Create</button>
                                             </div>
                                         </div>
                                     </form>

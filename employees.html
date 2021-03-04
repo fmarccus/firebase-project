@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body class="bg-light">
@@ -67,13 +68,13 @@
                     Employees</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fas fa-boxes me-1"></i>Inventory</a>
+                <a class="nav-link text-white" href="inventories.html"><i class="fas fa-boxes me-1"></i>Inventory</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="tasks.html"><i class="fas fa-tasks me-1"></i>Tasks/Meetings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="orders.html"><i class="fas fa-shopping-cart me-1"></i>Orders</a>
+                <a class="nav-link text-white" href="orders.html"><i class="fas fa-shopping-cart me-1"></i>Pending Orders</a>
             </li>
         </ul>
     </section>
@@ -190,7 +191,11 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12 text-end">
-                                                <button type="submit" class="btn btn-sm btn-primary">Done</button>
+                                                <input type="hidden" name="document" id="document">
+
+                                                <button type="button" id="update"
+                                                    class="btn btn-sm btn-light me-2">Update</button>
+                                                <button type="submit" class="btn btn-sm btn-primary  ">Create</button>
                                             </div>
                                         </div>
                                     </form>
@@ -211,9 +216,10 @@
                                 <div class="card-body">
                                     <h4 class="card-title text-center mb-4">Employees</h4>
                                     <div class="table-responsive">
-                                        <table class="table table-borderless table-hover table-inverse table-sm">
+                                        <table class="table table-bordered table-hover table-inverse table-sm">
                                             <thead class="thead-inverse">
                                                 <tr>
+                                                    <th colspan="2">Actions</th>
                                                     <th>Last Name</th>
                                                     <th>First Name</th>
                                                     <th>Middle Name</th>

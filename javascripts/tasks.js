@@ -20,7 +20,13 @@ formdata.on('submit', (e) => {
     $("#accomplish").val("");
     $("#date").val("");
 
-    alert("New Task Added!");
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'New task added!',
+        showConfirmButton: false,
+        timer: 1500
+    })
 })
 
 function render(doc) {
@@ -35,7 +41,7 @@ function render(doc) {
 
     column.setAttribute('class', 'col-md-4 mb-2');
     column.setAttribute('data-id', doc.id);//column because it has to be deleted too for real time response
-    card.setAttribute('class', 'card')
+    card.setAttribute('class', 'card');
     cardbody.setAttribute('data-id', doc.id);//card body because this is the parent element of the delete text
     cardbody.setAttribute('class', 'card-body');
     cardtitle.setAttribute('class', 'card-title mb-4')
@@ -65,6 +71,13 @@ function render(doc) {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
         db.collection('tasks').doc(id).delete();
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Task deleted!',
+            showConfirmButton: false,
+            timer: 1500
+        })
     });
 }
 
