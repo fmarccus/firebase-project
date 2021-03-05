@@ -10,8 +10,11 @@ formdata.on('submit', (e) => {
         contact: $("#contact").val(),
         item: $("#item").val(),
         amount: $("#amount").val(),
-        saleprice: parseFloat($("#amount").val()) + parseFloat(($("#amount").val() * 0.25)),
         quantity: $("#quantity").val(),
+        saleprice: parseFloat($("#amount").val()) + parseFloat(($("#amount").val() * 0.25)),
+        qsold: 0,
+        remaining: $("#quantity").val(),
+        sales: 0,
         total: $("#amount").val() * $("#quantity").val(),
         date: Date()
 
@@ -110,6 +113,9 @@ $('#arrived').on('click', (e) => {
         item: $("#item").val(),
         amount: $("#amount").val(),
         saleprice: $("#saleprice").val(),
+        qsold: 0,
+        remaining: $("#quantity").val(),
+        sales: 0,
         quantity: $("#quantity").val(),
         total: $("#amount").val() * $("#quantity").val(),
         date: Date()
@@ -146,6 +152,9 @@ $('#update').on('click', () => {
         item: $("#item").val(),
         amount: $("#amount").val(),
         saleprice: parseFloat($("#amount").val()) + parseFloat(($("#amount").val() * 0.25)),
+        qsold: 0,
+        remaining: $("#quantity").val(),
+        sales: 0,
         quantity: $("#quantity").val(),
         total: $("#amount").val() * $("#quantity").val(),
         date: Date()

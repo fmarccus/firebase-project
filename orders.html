@@ -29,62 +29,61 @@
 
 </head>
 
-<body class="bg-light pb-5">
-    <section>
+<body class="bg-light" style="padding-bottom: 200px;">
 
-        <ul class="nav justify-content-end" style="background-color: #ffcc5f;">
+    <section>
+        <ul class="nav justify-content-end" style="background-color: #333533;">
             <li class="nav-item mr-auto">
-                <button class="uk-button uk-button-light" style="background-color: #ffcc5f;" type="button"
+                <button class="uk-button uk-button-light" style="background-color: #333533;" type="button"
                     uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
-                        style="color:rgb(27, 20, 20); max-width: 15px;"></i></button>
+                        style="color:white; max-width: 15px;"></i></button>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="#">About Us</a>
+                <a class="nav-link text-light" href="#">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="#">Stores</a>
+                <a class="nav-link text-light" href="#">Stores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="#">Blogs</a>
+                <a class="nav-link text-light" href="#">Blogs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="#">FAQ</a>
+                <a class="nav-link text-light" href="#">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="#">Events</a>
+                <a class="nav-link text-light" href="#">Events</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-primary" href="#">Contact Us</a>
+                <a class="nav-link text-light" href="#">Contact Us</a>
             </li>
         </ul>
     </section>
 
 
 
-
     <section>
-        <div id="offcanvas-nav" uk-offcanvas="mode: push; uk-offcanvas=" overlay: true">
-            <div class="uk-offcanvas-bar" style="background-color: #003366;">
+        <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
+            <div class="uk-offcanvas-bar" style="background-color: #333533;">
                 <ul class="uk-nav uk-nav-default">
                     <br><br>
-                    <li class="uk-nav-header" style="font-size: 23px;">Dashboard<i
-                            class="fas fa-chevron-circle-down ml-3"></i></li>
+                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fas fa-swatchbook me-2"
+                            id="icon_logo"></i> Primer Bookstore</li>
 
                     <br>
-                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 18px;"><i
+                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-home me-3 text-light"></i>Home</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 18px;"><i
+                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-users me-3 text-light"></i>Manage
                             Employees</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 18px;"><i
+                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 18px;"><i
+                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 18px;"><i
+                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-shopping-cart me-3 text-light"></i>Pending
                             Orders</a></li>
                     <li class="uk-nav-divider"></li>
@@ -183,7 +182,8 @@
                                             </div>
                                             <div class="col-md-12 mb-2">
                                                 <input type="hidden" class="form-control" name="total" id="total">
-                                                <input type="text" class="form-control" name="saleprice" id="saleprice">
+                                                <input type="hidden" class="form-control" name="saleprice"
+                                                    id="saleprice">
 
                                             </div>
                                             <div class="col-md-12 mb-2">
@@ -218,9 +218,15 @@
                                 <div class="card-body">
                                     <h4 class="card-title text-center mb-4"><i
                                             class="fas fa-shopping-cart me-2"></i>Pending Orders</h4>
+                                    <div class="row">
+                                        <div class="col-md-4 ml-auto"><input id="myInput" class="form-control"
+                                                type="text" placeholder="Search.."><br></div>
+                                    </div>
                                     <div class="table-responsive">
-                                        <table class="table table-hover table-bordered table-sm table-inverse">
-                                            <thead class="thead-inverse">
+                                        <table id="myTable"
+                                            class="table table-bordered table-hover table-inverse table-sm text-center">
+                                            <thead class="thead-inverse"
+                                                style="background-color: #333533; color: white;">
                                                 <tr>
                                                     <th colspan="3">Actions</th>
                                                     <th>Supplier</th>
@@ -254,6 +260,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>
     <script src="/javascripts/orders.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

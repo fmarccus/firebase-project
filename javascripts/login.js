@@ -51,4 +51,6 @@ function login() {
 
 function logout() {
     firebase.auth().signOut();
+    $("#userEmail").val("");
+    $("#userPass").val("");
 }

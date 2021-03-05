@@ -39,21 +39,27 @@ function render(doc) {
     let date = document.createElement('li');
     let cross = document.createElement('a');
 
+    //var color = '#' + Math.random().toString(16).substr(2, 6);
+
+  
+    
+
     column.setAttribute('class', 'col-md-4 mb-2');
     column.setAttribute('data-id', doc.id);//column because it has to be deleted too for real time response
     card.setAttribute('class', 'card');
+    //card.style.backgroundColor = color;
     cardbody.setAttribute('data-id', doc.id);//card body because this is the parent element of the delete text
     cardbody.setAttribute('class', 'card-body');
-    cardtitle.setAttribute('class', 'card-title mb-4')
-
+    cardtitle.setAttribute('class', 'card-title mb-4 font-weight-bold text-success')
+   
 
     cardtitle.textContent = doc.data().title;
     objective.textContent = doc.data().objective;
-    accomplish.textContent = doc.data().accomplish;
-    date.textContent = doc.data().date;
-
-    cross.textContent = "Delete";
-    cross.setAttribute('class', 'text-danger');
+    accomplish.textContent = 'On ' + doc.data().accomplish;
+    
+    date.textContent = 'Added on '+doc.data().date;
+    cross.textContent = "Done";
+    cross.setAttribute('class', 'btn btn-sm btn-success mt-1 float-right');
     cross.style.cursor = "pointer";
 
 
@@ -73,13 +79,23 @@ function render(doc) {
         db.collection('tasks').doc(id).delete();
         Swal.fire({
             position: 'center',
-            icon: 'error',
-            title: 'Task deleted!',
+            icon: 'success',
+            title: 'Task done!',
             showConfirmButton: false,
             timer: 1500
         })
     });
 }
+
+
+
+
+
+
+
+
+
+
 
 db.collection('tasks').orderBy('accomplish').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();

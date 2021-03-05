@@ -1,8 +1,9 @@
 const tabledata = $("#tabledata");
 
 function render(doc) {
+
+
     tabledata.append(`<tr id="${doc.id}">
-    <td><a class="btn btn-sm btn-warning" name="update" href ="javascript:void(0)" id="${doc.id}">Edit</a></td>
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().customer}</td>
     <td>${doc.data().deliver}</td>
@@ -12,6 +13,9 @@ function render(doc) {
     <td>${doc.data().quantity} pcs.</td>
     <td>Php ${doc.data().total}</td>
     <td>Php ${doc.data().saleprice}</td>
+    <td>${doc.data().qsold} pcs</td>
+    <td>${doc.data().remaining} pcs</td>
+    <td>Php ${doc.data().sales}</td>
     <td>Php ${(doc.data().saleprice * doc.data().quantity) - doc.data().total}</td>
     <td>${doc.data().date}</td>
     </tr>`)
