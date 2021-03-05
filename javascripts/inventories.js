@@ -1,27 +1,26 @@
-const tabledata = $("#tabledata");
+const tabledata = $("#tabledata");//id of tbody
 
+//retrieves all documents
 function render(doc) {
-
-
     tabledata.append(`<tr id="${doc.id}">
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
-    <td>${doc.data().customer}</td>
-    <td>${doc.data().deliver}</td>
-    <td>${doc.data().contact}</td>
     <td>${doc.data().item}</td>
     <td>Php ${doc.data().amount}</td>
-    <td>${doc.data().quantity} pcs.</td>
+    <td>${doc.data().quantity} pcs.</td>    
     <td>Php ${doc.data().total}</td>
+    <td>${doc.data().remaining} pcs</td>
     <td>Php ${doc.data().saleprice}</td>
     <td>${doc.data().qsold} pcs</td>
-    <td>${doc.data().remaining} pcs</td>
     <td>Php ${doc.data().sales}</td>
     <td>Php ${(doc.data().saleprice * doc.data().quantity) - doc.data().total}</td>
+    <td>${doc.data().customer}</td>
+    <td>${doc.data().deliver}</td>
+    <td>${doc.data().contact}</td>           
     <td>${doc.data().date}</td>
     </tr>`)
 
 
-
+    //when button with name delete is clicked, delete the document
     $("[name = 'delete']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -34,60 +33,9 @@ function render(doc) {
             timer: 1500
         })
     })
-
-    $("[name = 'update']").click((e) => {
-        e.stopImmediatePropagation();
-        var id = e.target.id;
-        db.collection('inventories').doc(id).get().then(doc => {
-            $('#supplier').val(doc.data().customer);
-            $('#deliver').val(doc.data().deliver);
-            $('#contact').val(doc.data().contact);
-            $('#item').val(doc.data().item);
-            $('#amount').val(doc.data().amount);
-            $('#quantity').val(doc.data().quantity);
-            $('#total').val(doc.data().total);
-            $('#date').val(doc.data().date);
-            $('#document').val(doc.id);
-        })
-    })
-
 }
 
-$('#update').on('click', () => {
-    var id = $('#document').val();
-    db.collection('orders').doc(id).set({
-        customer: $("#supplier").val(),
-        deliver: $("#deliver").val(),
-        contact: $("#contact").val(),
-        item: $("#item").val(),
-        amount: $("#amount").val(),
-        quantity: $("#quantity").val(),
-        total: $("#amount").val() * $("#quantity").val(),
-        date: Date()
-    }, {
-        merge: true
-    })
-    $("#supplier").val("");
-    $("#deliver").val("");
-    $("#contact").val("");
-    $("#item").val("");
-    $("#amount").val("");
-    $("#quantity").val("");
-    $("#total").val("");
-    $("#date").val("");
-    $("#document").val("");
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Order updated successfully!',
-        showConfirmButton: false,
-        timer: 1500
-    })
-})
-
-
-
-
+//real time rendering of data
 db.collection('inventories').orderBy('total').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {

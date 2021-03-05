@@ -1,6 +1,7 @@
-const formdata = $("#formdata");
-const tabledata = $("#tabledata");
+const formdata = $("#formdata"); //id for form
+const tabledata = $("#tabledata");//id for tbody
 
+//add data to ORDERS
 formdata.on('submit', (e) => {
     e.preventDefault();
 
@@ -38,7 +39,7 @@ formdata.on('submit', (e) => {
     })
 })
 
-
+//retrieves documents
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}">
     <td><a class="btn btn-sm btn-light" name="arrived" href ="javascript:void(0)" id="${doc.id}">Arrived</a></td>
@@ -56,7 +57,7 @@ function render(doc) {
     </tr>`)
 
 
-
+    //when button with name delete is clicked, delete the document
     $("[name = 'delete']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -69,7 +70,7 @@ function render(doc) {
             timer: 1500
         })
     })
-
+    //when button with name update is clicked, retrieve the data and send to form
     $("[name = 'update']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -85,6 +86,7 @@ function render(doc) {
             $('#document').val(doc.id);
         })
     })
+    //when button with name arrived is clicked, retrieve the data and send to form
     $("[name = 'arrived']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -103,7 +105,7 @@ function render(doc) {
     })
 
 }
-
+//when button with id arrived is clicked, add the item to INVENTORY
 $('#arrived').on('click', (e) => {
     e.preventDefault();
     db.collection('inventories').add({
@@ -142,7 +144,7 @@ $('#arrived').on('click', (e) => {
         timer: 1500
     })
 })
-
+//when button with id update is clicked, update the ORDER
 $('#update').on('click', () => {
     var id = $('#document').val();
     db.collection('orders').doc(id).set({
@@ -179,10 +181,7 @@ $('#update').on('click', () => {
         timer: 1500
     })
 })
-
-
-
-
+//real time rendering of data
 db.collection('orders').orderBy('total').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {

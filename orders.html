@@ -31,6 +31,7 @@
 
 <body class="bg-light" style="padding-bottom: 200px;">
 
+    <!--Top bar-->
     <section>
         <ul class="nav justify-content-end" style="background-color: #333533;">
             <li class="nav-item mr-auto">
@@ -58,9 +59,9 @@
             </li>
         </ul>
     </section>
+    <!--top bar-->
 
-
-
+    <!--Side Bar-->
     <section>
         <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
             <div class="uk-offcanvas-bar" style="background-color: #333533;">
@@ -77,23 +78,26 @@
                                 class="fas fa-users me-3 text-light"></i>Manage
                             Employees</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
-                    <li class="uk-nav-divider"></li>
-                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
-                    <li class="uk-nav-divider"></li>
                     <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-shopping-cart me-3 text-light"></i>Pending
                             Orders</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
                 </ul>
             </div>
         </div>
     </section>
+    <!--End of Side Bar-->
 
-
-    <!-- Navigation bar -->
+    <!-- Title bar -->
     <section>
         <nav class="navbar">
             <div class="container">
@@ -102,7 +106,7 @@
             </div>
         </nav>
     </section>
-    <!-- End Navigation bar -->
+    <!-- End of Title bar -->
 
     <div class="container-fluid">
         <div class="row">
@@ -189,6 +193,8 @@
                                             <div class="col-md-12 mb-2">
                                                 <input type="hidden" class="form-control" name="date" id="date">
                                                 <input type="hidden" name="document" id="document">
+                                                <input type="hidden" name="remaining" id="remaining">
+
                                             </div>
                                             <div class="col-md-12 text-end">
 
@@ -216,7 +222,7 @@
                         <div class="col-md-12">
                             <div class="card text-truncate">
                                 <div class="card-body">
-                                    <h4 class="card-title text-center mb-4"><i
+                                    <h4 class="card-title text-center"><i
                                             class="fas fa-shopping-cart me-2"></i>Pending Orders</h4>
                                     <div class="row">
                                         <div class="col-md-4 ml-auto"><input id="myInput" class="form-control"
@@ -260,16 +266,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>
     <script src="/javascripts/orders.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#myInput").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
+    <script src="/javascripts/search.js"></script>
 
 </body>
 

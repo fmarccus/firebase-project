@@ -1,10 +1,9 @@
-const formdata = $("#formdata");
-const tabledata = $("#tabledata");
+const formdata = $("#formdata"); //id for form
+const tabledata = $("#tabledata"); //id for tbody
 
-
+//add record
 formdata.on('submit', (e) => {
     e.preventDefault();
-
     db.collection('employees').add({
         lastname: $("#lastname").val(),
         firstname: $("#firstname").val(),
@@ -30,10 +29,9 @@ formdata.on('submit', (e) => {
         showConfirmButton: false,
         timer: 1500
     })
-
 })
 
-
+//retrieve records
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}"> 
     <td><a class="btn btn-sm btn-warning" name="update" href ="javascript:void(0)" id="${doc.id}">Edit</a></td>
@@ -48,6 +46,7 @@ function render(doc) {
     <td>Php ${doc.data().salary}</td>
     </tr>`)
 
+//when button with name delete is click, delete the document
     $("[name = 'delete']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -61,7 +60,7 @@ function render(doc) {
         })
     })
 
-
+//when button with name update is click, retrieve the data and send to form
     $("[name = 'update']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
@@ -78,7 +77,7 @@ function render(doc) {
         })
     })
 }
-
+//when button with id update is click, update the document
 $('#update').on('click', () => {
     var id = $('#document').val();
     db.collection('employees').doc(id).set({
@@ -110,7 +109,7 @@ $('#update').on('click', () => {
         timer: 1500
     })
 })
-
+//real time rendering
 db.collection('employees').orderBy('salary').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
