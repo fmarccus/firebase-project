@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meetings/Tasks</title>
+    <title>Sales History</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
@@ -18,27 +18,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
         integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/css/uikit.min.css" />
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
-    <link rel="manifest" href="/logo/site.webmanifest">
-    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
-
 
 </head>
 
-<body class="bg-light" style="padding-bottom: 250px;">
+<body class="bg-light" style="padding-bottom: 200px;">
     <!--Top bar-->
     <section>
         <ul class="nav justify-content-end" style="background-color: #333533;">
@@ -107,6 +103,7 @@
         </div>
     </section>
     <!--End of Side Bar-->
+
     <!-- Title bar -->
     <section>
         <nav class="navbar">
@@ -118,80 +115,46 @@
     </section>
     <!-- End of Title bar -->
 
-    <section>
-        <div class="container-fluid">
+
+    <!--Sales History-->
+    <section class="mt-3">
+        <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <!--Add task-->
-                    <section class="mt-3">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title text-center mb-4"><i class="fas fa-edit me-2"></i>Create
-                                            Task</h4>
-                                        <form id="formdata" method="post">
-                                            <div class="row">
-                                                <div class="col-md-12 mb-2">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i
-                                                                    class="fas fa-question-circle"></i></span>
-                                                        </div>
-                                                        <input type="text" class="form-control" name="title" id="title"
-                                                            aria-describedby="helpId" placeholder="Title" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 mb-2">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i
-                                                                    class="fas fa-copy"></i></span>
-                                                        </div>
-                                                        <textarea class="form-control" name="objective" id="objective"
-                                                            aria-describedby="helpId"
-                                                            rows="5">What are the objectives?</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 mb-3">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="basic-addon1"><i
-                                                                    class="fas fa-calendar-week"></i></span>
-                                                        </div>
-                                                        <input type="date" class="form-control" name="accomplish"
-                                                            id="accomplish" aria-describedby="helpId"
-                                                            placeholder="Accomplishment Date" required>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" id="date" name="id">
-                                                <div class="col-md-12 text-end">
-                                                    <button type="submit" class="btn btn-sm btn-primary">Create</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Sales History</h4>
+                            <div class="row">
+                                <div class="col-md-6 ml-auto"><input id="myInput" class="form-control" type="text"
+                                        placeholder="Search.."><br></div>
                             </div>
+                            <table id="myTable"
+                                class="table table-bordered table-hover table-inverse table-sm text-center">
+                                <thead class="thead-inverse" style="background-color: #333533; color: white;">
+                                    <tr>
+                                        <th>Action </th>
+                                        <th>Item</th>
+                                        <th>Amount</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Date of Purchase</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabledata">
+
+                                </tbody>
+                            </table>
                         </div>
-                    </section>
-                    <!--End of task-->
-                </div>
-                <!--task list-->
-
-                <div class="col-md-8 mt-3">
-                    <div class="row" id="tasklist">
-
                     </div>
                 </div>
-                <!--task list-->
-                <div style="margin-bottom: 2rem;"></div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="/javascripts/connection.js"></script>
-        <script src="/javascripts/tasks.js"></script>
     </section>
+    <!--End of Sales History-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascripts/connection.js"></script>
+    <script src="/javascripts/saleshistory.js"></script>
+    <script src="/javascripts/search.js"></script>
 </body>
 
 </html>

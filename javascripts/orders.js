@@ -116,7 +116,7 @@ $('#arrived').on('click', (e) => {
         amount: $("#amount").val(),
         saleprice: $("#saleprice").val(),
         qsold: 0,
-        remaining: $("#quantity").val(),
+        remaining: firebase.firestore.FieldValue.increment($("#quantity").val()),
         sales: 0,
         quantity: $("#quantity").val(),
         total: $("#amount").val() * $("#quantity").val(),

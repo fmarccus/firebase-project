@@ -4,14 +4,14 @@ function render(doc) {
 
 
     tabledata.append(`<tr id="${doc.id}">
-    <td><a class="btn btn-sm btn-success" name="update" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
+    <td><a class="btn btn-sm btn-success" name="select" href ="javascript:void(0)" id="${doc.id}">Select</a></td>
     <td>${doc.data().item}</td>
     <td>Php ${doc.data().saleprice}</td>
     <td>${doc.data().remaining} pcs</td>
     </tr>`)
 
-
-    $("[name = 'update']").click((e) => {
+    //transfers the value of an item in the form field
+    $("[name = 'select']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
         db.collection('inventories').doc(id).get().then(doc => {
@@ -25,7 +25,7 @@ function render(doc) {
     })
 
 }
-
+//if btnsubmit is clicked, update the inventories
 $('#btnsubmit').on('click', () => {
     var id = $('#document').val();
     db.collection('inventories').doc(id).set({
@@ -35,11 +35,8 @@ $('#btnsubmit').on('click', () => {
     }, {
         merge: true
     })
-    $("#item").val("");
-    $("#quantity_item").val("");
-    $("#selling_price").val("");
-    $("#sum").val("");
     $("#document").val("");
+
     Swal.fire({
         position: 'center',
         icon: 'success',
@@ -47,6 +44,19 @@ $('#btnsubmit').on('click', () => {
         showConfirmButton: false,
         timer: 1500
     })
+    db.collection('sales').add({
+        item: $("#item").val(),
+        selling_price: $("#selling_price").val(),
+        quantity_item: $("#quantity_item").val(),
+        sum: $("#sum").val(),
+        date: Date()
+    })
+    $("#item").val("");
+    $("#selling_price").val("");
+    $("#quantity_item").val("");
+    $("#sum").val("");
+    $("#document").val("");
+
 })
 
 

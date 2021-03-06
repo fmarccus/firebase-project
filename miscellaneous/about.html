@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
+    <link rel="manifest" href="/logo/site.webmanifest">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
@@ -18,10 +24,255 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-light pb-5">
+    <section>
+        <ul class="nav justify-content-end" style="background-color: 
+        #333533;">
+            <li class="nav-item mr-auto">
+                <button class="uk-button uk-button-light" style="background-color: 
+                #333533;" type="button" uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
+                        style="color:rgb(255, 255, 255); max-width: 15px;"></i></button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/miscellaneous/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/miscellaneous/stores.html">Stores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/miscellaneous/faqs.html">FAQs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/miscellaneous/privacy.html">Privacy Policies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/miscellaneous/feedback.html">Feedbacks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/miscellaneous/contactus.html">Contact Us</a>
+            </li>
+        </ul>
+    </section>
 
+
+
+    <!--Side Bar-->
+    <section>
+        <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
+            <div class="uk-offcanvas-bar" style="background-color: #333533;">
+                <ul class="uk-nav uk-nav-default">
+                    <br><br>
+                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fas fa-swatchbook me-2"
+                            id="icon_logo"></i> Primer Bookstore</li>
+
+                    <br>
+                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-home me-3 text-light"></i>Home</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-users me-3 text-light"></i>Manage
+                            Employees</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-shopping-cart me-3 text-light"></i>Pending
+                            Orders</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-history me-3 text-light"></i>Sales History</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
+                    <li class="uk-nav-divider"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End of Side Bar-->
+
+    <!-- Navigation bar -->
+    <section>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fas fa-swatchbook me-2"
+                        id="icon_logo"></i>PRIMER BOOKSTORE</a>
+            </div>
+        </nav>
+    </section>
+    <!-- End Navigation bar -->
+
+
+
+
+
+
+    <!-- Content -->
+    <section>
+        <div class="container">
+            <div class="row mt-5 mb-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title mt-2 text-center" style="font-family: Segoe UI;"><i
+                                class="fas fa-info-circle text-primary me-2"></i>ABOUT US</h3><br>
+                        <div class="row">
+                            <!-- Carousel -->
+                            <div class="col-md-12">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 0"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="1" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="2" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="3" aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="4" aria-label="Slide 4"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="5" aria-label="Slide 5"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="6" aria-label="Slide 6"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="7" aria-label="Slide 7"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="8" aria-label="Slide 8"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="/images/1.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/2.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/3.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/4.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/5.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/6.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/7.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/8.jpg" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/9.jpg" class="d-block w-100">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- End of Carousel -->
+
+                            <div class="col-md-12"><br>
+                                <p align="justify"
+                                    style="font-family: Arial; font-size: 16px; color: rgb(114, 112, 112);">Established
+                                    in 1996, Primer Bookstore opened its first bookstore branch in Rockwell and
+                                    has grown to 21 branches nationwide. Known for its comprehensive selection of books
+                                    under every interest, the Philippine bookstore’s signature ambiance has also become
+                                    a haven for thought tinkerers and readers alike.</p>
+
+                                <hr>
+
+                                <p style="font-family: Arial; font-size: 16px; color: rgb(54, 52, 52);">
+                                    <strong>25 Years of Endless Discoveries</strong>
+                                </p>
+                                <p align="justify"
+                                    style="font-family: Arial; font-size: 16px; color: rgb(114, 112, 112);">For many
+                                    years, we have remained close to the hearts of millions of Filipinos across
+                                    generations. No matter what point they are in their lives, they will always have a
+                                    home here in Primer Bookstore – whether they are readers, artists, students, even
+                                    the whole family.
+                                    <br><br>
+                                    We are proud to remain a constant in everyone's journey, nurturing the passions and
+                                    inspiring the growth of every Filipino. Our founders, Socorro Cancio – Ramos, Jose
+                                    Ramos, and their family, embodied hard work and powerful leadership and persevered
+                                    against all odds.
+                                </p>
+
+                                <p style="font-family: Arial; font-size: 16px; color: rgb(54, 52, 52);">
+                                    <strong>Local store with world-class titles</strong>
+                                </p>
+                                <p align="justify"
+                                    style="font-family: Arial; font-size: 16px; color: rgb(114, 112, 112);">
+                                    With over a hundred thousand titles across multiple genres, Fully Booked has
+                                    captured
+                                    the loyalty of book lovers of all ages. From Graphic Novels to books on Cookery,
+                                    Architecture and Design, anyone who walks in a Fully Booked bookstore with an open
+                                    mind
+                                    and a thirst for a good read will ultimately find a story to fall in love with.
+                                </p>
+
+                                <p style="font-family: Arial; font-size: 16px; color: rgb(54, 52, 52);">
+                                    <strong>More than books</strong>
+                                </p>
+                                <p align="justify"
+                                    style="font-family: Arial; font-size: 16px; color: rgb(114, 112, 112);">
+                                    Fully Booked has expanded to offer one-of-a-kind merchandise to suit the lifestyle
+                                    of
+                                    its readers. We offer high-quality stationery, arts and crafts, novelty notebooks,
+                                    vinyl
+                                    records, and other collectibles as unique as its patrons.
+                                </p>
+
+                                <p style="font-family: Arial; font-size: 16px; color: rgb(54, 52, 52);">
+                                    <strong>The Fully Booked Mission and Vision</strong>
+                                </p>
+                                <p align="justify"
+                                    style="font-family: Arial; font-size: 16px; color: rgb(114, 112, 112);">
+                                    The mission of Fully Booked is simple: to create a haven for discovery and
+                                    connection
+                                    that inspires people to shape their own stories and become better versions of
+                                    themselves. The vision of Fully Booked is simpler: to be the best bookstore possible
+                                    in
+                                    terms of selection, ambiance, and customer experience.
+                                    <br><br>
+                                    Fully Booked is all about finding the next great read. Whether it’s a book of
+                                    Fiction or
+                                    Memoir, great stories are everywhere if people just take the time to look. Visit one
+                                    of
+                                    our bookstores in the Philippines
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

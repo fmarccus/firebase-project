@@ -15,8 +15,8 @@
 .navbar {
     background-color:   #242423;
 }
-.background {
-    background-image: url('background.jpg');
+.background-feedback {
+    background-image: url('/images/bg-feedback.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;

@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Point of Sales</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
+    <link rel="manifest" href="/logo/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
@@ -26,6 +30,7 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
+    
 </head>
 
 
@@ -39,22 +44,22 @@
                         style="color:white; max-width: 15px;"></i></button>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">About Us</a>
+                <a class="nav-link text-light" href="/miscellaneous/about.html">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">Stores</a>
+                <a class="nav-link text-light" href="/miscellaneous/stores.html">Stores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">Blogs</a>
+                <a class="nav-link text-light" href="/miscellaneous/faqs.html">FAQs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">FAQ</a>
+                <a class="nav-link text-light" href="/miscellaneous/privacy.html">Privacy Policies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">Events</a>
+                <a class="nav-link text-light" href="/miscellaneous/feedback.html">Feedbacks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">Contact Us</a>
+                <a class="nav-link text-light" href="/miscellaneous/contactus.html">Contact Us</a>
             </li>
         </ul>
     </section>
@@ -86,6 +91,9 @@
                     <li class="uk-nav-divider"></li>
                     <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                                class="fas fa-history me-3 text-light"></i>Sales History</a></li>
                     <li class="uk-nav-divider"></li>
                     <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
@@ -155,7 +163,7 @@
                                                             class="fas fa-dollar-sign ms-1 me-1"></i></span>
                                                 </div>
                                                 <input type="number" class="form-control" name="sum" id="sum"
-                                                    aria-describedby="helpId" placeholder="Total" required>
+                                                    aria-describedby="helpId" placeholder="Total" required readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -213,7 +221,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>
-    <script src="/javascripts/products.js"></script>
+    <script src="/javascripts/pointsales.js"></script>
     <script src="/javascripts/search.js"></script>
     <script src="/javascripts/total.js"></script>
 </body>
