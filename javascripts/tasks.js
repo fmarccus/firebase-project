@@ -43,10 +43,10 @@ function render(doc) {
 
   
     
-
+    
     column.setAttribute('class', 'col-md-4 mb-2');
     column.setAttribute('data-id', doc.id);//column because it has to be deleted too for real time response
-    card.setAttribute('class', 'card');
+    card.setAttribute('class', 'card bg-light');
     //card.style.backgroundColor = color;
     cardbody.setAttribute('data-id', doc.id);//card body because this is the parent element of the delete text
     cardbody.setAttribute('class', 'card-body');

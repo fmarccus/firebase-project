@@ -42,7 +42,7 @@ formdata.on('submit', (e) => {
 //retrieves documents
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}">
-    <td><a class="btn btn-sm btn-light" name="arrived" href ="javascript:void(0)" id="${doc.id}">Arrived</a></td>
+    <td><a class="btn btn-sm btn-info" name="arrived" href ="javascript:void(0)" id="${doc.id}">Arrived</a></td>
     <td><a class="btn btn-sm btn-warning" name="update" href ="javascript:void(0)" id="${doc.id}">Edit</a></td>
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().customer}</td>

@@ -12,7 +12,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
     <link rel="manifest" href="/logo/site.webmanifest">
 
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
@@ -34,13 +33,15 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
 </head>
 
-<body class="bg-light pb-5">
+<body class="pb-5">
+
+
+    <!--Top bar-->
     <section>
-        <ul class="nav justify-content-end" style="background-color: 
-        #333533;">
+        <ul class="nav justify-content-end" style="background-color: #25476D;">
             <li class="nav-item mr-auto">
-                <button class="uk-button uk-button-light" style="background-color: 
-                #333533;" type="button" uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
+                <button class="uk-button uk-button-light" style="background-color: #25476D;" type="button"
+                    uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
                         style="color:rgb(255, 255, 255); max-width: 15px;"></i></button>
             </li>
             <li class="nav-item">
@@ -63,40 +64,40 @@
             </li>
         </ul>
     </section>
-
-
+    <!--top bar-->
 
     <!--Side Bar-->
     <section>
         <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
-            <div class="uk-offcanvas-bar" style="background-color: #333533;">
+            <div class="uk-offcanvas-bar" style="background-color: #32527B;">
                 <ul class="uk-nav uk-nav-default">
                     <br><br>
-                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fas fa-swatchbook me-2"
+                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fab fa-pinterest me-2"
                             id="icon_logo"></i> Primer Bookstore</li>
 
                     <br>
-                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-home me-3 text-light"></i>Home</a></li>
+                    <li><a href="/index.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                                class="fas fa-home me-3"></i>Home</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-users me-3 text-light"></i>Manage
+                    <li><a href="/employees.html" class="uk-margin-small-right"
+                            style="font-size: 16px; color: white;"><i class="fas fa-users me-3 text-light"></i>Manage
                             Employees</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/orders.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-shopping-cart me-3 text-light"></i>Pending
                             Orders</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/inventories.html" class="uk-margin-small-right"
+                            style="font-size: 16px; color: white;"><i
                                 class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/pos.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/sales.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-history me-3 text-light"></i>Sales History</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/tasks.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
                 </ul>
@@ -105,17 +106,15 @@
     </section>
     <!--End of Side Bar-->
 
-    <!-- Navigation bar -->
+    <!-- Title bar -->
     <section>
         <nav class="navbar">
-            <div class="container">
-                <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fas fa-swatchbook me-2"
-                        id="icon_logo"></i>PRIMER BOOKSTORE</a>
-            </div>
+            <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
+                    id="icon_logo"></i>PRIMER BOOKSTORE</a>
+
         </nav>
     </section>
-    <!-- End Navigation bar -->
-
+    <!-- End of Title bar -->
 
     <!-- Content -->
     <section>
@@ -124,75 +123,23 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title mt-2 text-center" style="font-family: Segoe UI;"><i
-                                class="fas fa-phone-square-alt text-primary me-2"></i>CONTACT US</h3><br>
+                                class="fas fa-question-circle  me-2"></i>Frequently Asked Questions</h3><br>
                         <div class="row">
-                            <div class="col-md-8">
-                                <div class="card" style="border-radius: 15px;">
-                                    <div class="card-header"
-                                        style="background-color: #686868; color: white; border-radius: 4px;">
-                                        <i class="fas fa-envelope-open-text text-light me-2"></i>Get in touch with us!
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="mb-0">
-                                        <p style="font-family: Arial; font-size: 16px; color: rgb(54, 52, 52);">In light
-                                            of the Enhanced Community Quarantine in place, we request that
-                                            you reach out to us via email for your bookish needs:
-                                            <br>
-                                            <hr>
-                                            Online orders follow-up and concerns: <a href="#"
-                                                style="color: #4572c5;">support@primerbookstore.com</a>
-                                            <br><br>
-                                            Book reservation and product inquiries: <a href="#"
-                                                style="color: #4572c5;">greatreads@primerbookstore.com</a>
-                                            <br><br>
-                                            Bulk and corporate orders: <a href="#"
-                                                style="color: #4572c5;">corporateaccounts@primerbookstore.com</a>
-                                            <br><br>
-                                            Events and venue rentals: <a href="#"
-                                                style="color: #4572c5;">events@primerbookstore.com</a>
-                                            <br><br>
-                                            Careers: <a href="#" style="color: #4572c5;">hrd@primerbookstore.com</a>
-                                            <br><br>
-                                            Customer Feedback and Concerns: <a href="#"
-                                                style="color: #4572c5;">feedback@primerbookstore.com</a>
-                                        </p><br>
-                                        <footer class="blockquote-footer">&copy;
-                                            Primer Bookstore</footer>
-                                        </p>
-                                    </div>
-                                </div>
+                            <p style="color:#32527B; font-size: 20px;">BROWSING AND SHOPPING</p>
+                            <div class="col-md-12">
+
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="card" style="border-radius: 15px;">
-                                    <div class="card-header"
-                                        style="background-color: #686868; color: white; border-radius: 4px;">
-                                        <i class="fas fa-map-marker-alt text-light me-2"></i>Fully Booked Head Office
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="mb-0">
-                                        <p style="font-family: Arial; font-size: 16px; color: rgb(54, 52, 52);">
-                                            B6 Bonifacio High Street, Bonifacio Global City, Taguig
-                                            <br>
-                                        <p style="color: #4572c5;">(02) 8-858-7000 | 8-858-7051 | 8-858-7052</p>
-                                        <br>
-                                        For Events and Venue Rentals
-                                        <br>
-                                        <p style="color: #4572c5;">(02) 8-858-7000 local 7078</p>
-                                        </p><br>
-                                        <footer class="blockquote-footer">&copy;
-                                            Primer Bookstore</footer>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <br>
                     </div>
                 </div>
             </div>
+            <p class="back-top" style="font-size: 30px; text-align: right; position: relative;"><a href="#"> <i
+                class="fas fa-arrow-circle-up text-info"></i></a></p>
+            <hr><br>
         </div>
     </section>
+
 </body>
 
 </html>

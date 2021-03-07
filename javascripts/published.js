@@ -16,28 +16,6 @@ db.settings({ timestampsInSnapshots: true });
 const formdata = $("#formdata");
 const tabledata = $("#tabledata");
 
-formdata.on('submit', (e) => {
-    e.preventDefault();
-
-    db.collection('feedback').add({
-        name: $("#name").val(),
-        phone: $("#phone").val(),
-        email: $("#email").val(),
-        feedback: $("#feedback").val(),
-        date: Date()
-    })
-    $("#name").val("");
-    $("#phone").val("");
-    $("#email").val("");
-    $("#feedback").val("");
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Feedback sent!',
-        showConfirmButton: false,
-        timer: 1500
-    })
-})
 
 function render(doc) {
     tabledata.append(`<tr id="${doc.id}"> 
@@ -53,20 +31,19 @@ function render(doc) {
     $("[name = 'select']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
-        db.collection('feedback').doc(id).get().then(doc => {
+        db.collection('published').doc(id).get().then(doc => {
             $('#name').val(doc.data().name);
             $('#phone').val(doc.data().phone);
             $('#email').val(doc.data().email);
             $('#feedback').val(doc.data().feedback);
             $('#date').val(doc.data().date);
             $('#document').val(doc.id);
-
         })
     })
     $("[name = 'delete']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
-        db.collection('feedback').doc(id).delete();
+        db.collection('published').doc(id).delete();
         Swal.fire({
             position: 'center',
             icon: 'error',
@@ -77,9 +54,9 @@ function render(doc) {
     })
 }
 //when button with id arrived is clicked, add the item to INVENTORY
-$('#publish').on('click', (e) => {
+$('#unpublish').on('click', (e) => {
     e.preventDefault();
-    db.collection('published').add({
+    db.collection('feedback').add({
         name: $("#name").val(),
         phone: $("#phone").val(),
         email: $("#email").val(),
@@ -88,7 +65,7 @@ $('#publish').on('click', (e) => {
     })
     e.stopImmediatePropagation();
     var id = $('#document').val();
-    db.collection('feedback').doc(id).delete();
+    db.collection('published').doc(id).delete();
 
     $("#name").val("");
     $("#phone").val("");
@@ -97,13 +74,13 @@ $('#publish').on('click', (e) => {
     $("#document").val("");
     Swal.fire({
         position: 'center',
-        icon: 'success',
-        title: 'Feedback published!',
+        icon: 'error',
+        title: 'Feedback unpublished!',
         showConfirmButton: false,
         timer: 1500
     })
 })
-db.collection('feedback').orderBy('name').onSnapshot(snapshot => {
+db.collection('published').orderBy('date').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == "added") {
@@ -119,3 +96,4 @@ db.collection('feedback').orderBy('name').onSnapshot(snapshot => {
         }
     })
 })
+//25476d

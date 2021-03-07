@@ -40,13 +40,14 @@
     </style>
 </head>
 
-<body class="bg-light pb-5">
+<body class="pb-5">
+
+    <!--Top bar-->
     <section>
-        <ul class="nav justify-content-end" style="background-color: 
-        #333533;">
+        <ul class="nav justify-content-end" style="background-color: #25476D;">
             <li class="nav-item mr-auto">
-                <button class="uk-button uk-button-light" style="background-color: 
-                #333533;" type="button" uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
+                <button class="uk-button uk-button-light" style="background-color: #25476D;" type="button"
+                    uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
                         style="color:rgb(255, 255, 255); max-width: 15px;"></i></button>
             </li>
             <li class="nav-item">
@@ -69,40 +70,40 @@
             </li>
         </ul>
     </section>
-
-
+    <!--top bar-->
 
     <!--Side Bar-->
     <section>
         <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
-            <div class="uk-offcanvas-bar" style="background-color: #333533;">
+            <div class="uk-offcanvas-bar" style="background-color: #32527B;">
                 <ul class="uk-nav uk-nav-default">
                     <br><br>
-                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fas fa-swatchbook me-2"
+                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fab fa-pinterest me-2"
                             id="icon_logo"></i> Primer Bookstore</li>
 
                     <br>
-                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-home me-3 text-light"></i>Home</a></li>
+                    <li><a href="/index.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                                class="fas fa-home me-3"></i>Home</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-users me-3 text-light"></i>Manage
+                    <li><a href="/employees.html" class="uk-margin-small-right"
+                            style="font-size: 16px; color: white;"><i class="fas fa-users me-3 text-light"></i>Manage
                             Employees</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/orders.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-shopping-cart me-3 text-light"></i>Pending
                             Orders</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/inventories.html" class="uk-margin-small-right"
+                            style="font-size: 16px; color: white;"><i
                                 class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/pos.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/sales.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-history me-3 text-light"></i>Sales History</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/tasks.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
                 </ul>
@@ -111,17 +112,16 @@
     </section>
     <!--End of Side Bar-->
 
-
-    <!-- Navigation bar -->
+    <!-- Title bar -->
     <section>
         <nav class="navbar">
-            <div class="container">
-                <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fas fa-swatchbook me-2"
-                        id="icon_logo"></i>PRIMER BOOKSTORE</a>
-            </div>
+            <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
+                    id="icon_logo"></i>PRIMER BOOKSTORE</a>
+
         </nav>
     </section>
-    <!-- End Navigation bar -->
+    <!-- End of Title bar -->
+
 
 
     <!-- Content -->
@@ -136,7 +136,8 @@
 
                             <ul uk-accordion="multiple: true">
                                 <li class="uk-open">
-                                    <a class="uk-accordion-title" href="#">Introduction</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Introduction</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>Welcome to <b> Primer Bookstore</b>. Our Privacy Policy
@@ -163,7 +164,8 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Definitions</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Definitions</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p><b>SERVICE</b> means the primerbookstore.com website operated by Primer
@@ -201,7 +203,9 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Information Collection and Use</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Information
+                                        Collection and Use</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
@@ -211,7 +215,9 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Types of Data Collected</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Types of Data
+                                        Collected</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p><b>Personal Data</b></p>
@@ -269,7 +275,8 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Use of Data</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Use of Data</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>Primer Bookstore uses the collected data for various purposes:</p>
@@ -309,7 +316,9 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Retention of Data</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Retention of
+                                        Data</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>We will retain your Personal Data only for as long as is necessary for the
@@ -333,7 +342,8 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Transfer of Data</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Transfer of Data</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>Your information, including Personal Data, may be transferred to – and
@@ -365,7 +375,9 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Disclosure of Data</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Disclosure of
+                                        Data</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>We may disclose personal information that we collect, or you provide:</p>
@@ -400,7 +412,8 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Security of Data</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Security of Data</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>The security of your data is important to us but remember that no method of
@@ -415,7 +428,9 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Changes to This Privacy Policy</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Changes to This
+                                        Privacy Policy</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>We may update our Privacy Policy from time to time. We will notify you of any
@@ -434,7 +449,8 @@
                                 </li>
 
                                 <li>
-                                    <a class="uk-accordion-title" href="#">Contact Us</a>
+                                    <a class="uk-accordion-title" href="#"
+                                        style="background-color: rgb(236, 236, 236); padding: 5px;">Contact Us</a>
                                     <div class="uk-accordion-content">
                                         <hr>
                                         <p>If you have any questions regarding to this Privacy Policy and Terms and
@@ -482,7 +498,11 @@
                         </div>
                     </div>
                 </div>
+                <p class="back-top" style="font-size: 30px; text-align: right; position: relative;"><a href="#"> <i
+                    class="fas fa-arrow-circle-up text-info"></i></a></p>
             </div>
+            <br><br>
+            <hr>
         </div>
     </div>
 

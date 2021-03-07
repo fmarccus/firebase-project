@@ -34,13 +34,14 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
 </head>
 
-<body class="bg-light pb-5">
+<body class="pb-5">
+
+    <!--Top bar-->
     <section>
-        <ul class="nav justify-content-end" style="background-color: 
-        #333533;">
+        <ul class="nav justify-content-end" style="background-color: #25476D;">
             <li class="nav-item mr-auto">
-                <button class="uk-button uk-button-light" style="background-color: 
-                #333533;" type="button" uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
+                <button class="uk-button uk-button-light" style="background-color: #25476D;" type="button"
+                    uk-toggle="target: #offcanvas-nav"><i class="fas fa-bars"
                         style="color:rgb(255, 255, 255); max-width: 15px;"></i></button>
             </li>
             <li class="nav-item">
@@ -63,40 +64,40 @@
             </li>
         </ul>
     </section>
-
-
+    <!--top bar-->
 
     <!--Side Bar-->
     <section>
         <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay:true">
-            <div class="uk-offcanvas-bar" style="background-color: #333533;">
+            <div class="uk-offcanvas-bar" style="background-color: #32527B;">
                 <ul class="uk-nav uk-nav-default">
                     <br><br>
-                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fas fa-swatchbook me-2"
+                    <li class="uk-nav-header" style="font-size: 22px;"> <i class="fab fa-pinterest me-2"
                             id="icon_logo"></i> Primer Bookstore</li>
 
                     <br>
-                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-home me-3 text-light"></i>Home</a></li>
+                    <li><a href="/index.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                                class="fas fa-home me-3"></i>Home</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px;"><i
-                                class="fas fa-users me-3 text-light"></i>Manage
+                    <li><a href="/employees.html" class="uk-margin-small-right"
+                            style="font-size: 16px; color: white;"><i class="fas fa-users me-3 text-light"></i>Manage
                             Employees</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="orders.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/orders.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-shopping-cart me-3 text-light"></i>Pending
                             Orders</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="inventories.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/inventories.html" class="uk-margin-small-right"
+                            style="font-size: 16px; color: white;"><i
                                 class="fas fa-boxes me-3 text-light"></i>Inventory</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="pos.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/pos.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-dollar-sign me-4 text-light"></i>Point of Sales</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="sales.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/sales.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-history me-3 text-light"></i>Sales History</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px;"><i
+                    <li><a href="/tasks.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
                 </ul>
@@ -105,16 +106,16 @@
     </section>
     <!--End of Side Bar-->
 
-    <!-- Navigation bar -->
+    <!-- Title bar -->
     <section>
         <nav class="navbar">
-            <div class="container">
-                <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fas fa-swatchbook me-2"
-                        id="icon_logo"></i>PRIMER BOOKSTORE</a>
-            </div>
+            <a href="/index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
+                    id="icon_logo"></i>PRIMER BOOKSTORE</a>
+
         </nav>
     </section>
-    <!-- End Navigation bar -->
+    <!-- End of Title bar -->
+
 
 
     <!-- Content -->
@@ -129,7 +130,7 @@
                             <div class="col-md-8">
                                 <div class="card" style="border-radius: 15px;">
                                     <div class="card-header"
-                                        style="background-color: #686868; color: white; border-radius: 4px;">
+                                        style="background-color: #32527B; color: white; border-radius: 4px;">
                                         <i class="fas fa-envelope-open-text text-light me-2"></i>Get in touch with us!
                                     </div>
                                     <div class="card-body">
@@ -166,7 +167,7 @@
                             <div class="col-md-4">
                                 <div class="card" style="border-radius: 15px;">
                                     <div class="card-header"
-                                        style="background-color: #686868; color: white; border-radius: 4px;">
+                                        style="background-color: #32527B; color: white; border-radius: 4px;">
                                         <i class="fas fa-map-marker-alt text-light me-2"></i>Fully Booked Head Office
                                     </div>
                                     <div class="card-body">
@@ -191,6 +192,9 @@
                     </div>
                 </div>
             </div>
+            <p class="back-top" style="font-size: 30px; text-align: right; position: relative;"><a href="#"> <i
+                class="fas fa-arrow-circle-up text-info"></i></a></p>
+            <hr>
         </div>
     </section>
 </body>
