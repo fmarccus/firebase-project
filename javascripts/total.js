@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     function calc() {
         var $num1 = +$("#selling_price").val();
-        var $num2 = +$("#quantity_item").val();
+        var $num2 = +$("#quantity_sold").val();
         $("#sum").val($num1 * $num2);
     }
     $(".key").keyup(function () {

@@ -1,31 +1,20 @@
-const tabledata = $("#tabledata");//id of tbody
+const datatable = $("#datatable");//id for tbody
 
-//retrieves all documents
 function render(doc) {
-    tabledata.append(`<tr id="${doc.id}">
+    datatable.append(`<tr id="${doc.id}">
     <td><a class="btn btn-sm btn-danger" name="delete" href ="javascript:void(0)" id="${doc.id}">Delete</a></td>
     <td>${doc.data().item}</td>
-    <td>Php ${doc.data().amount}</td>
-    <td>${doc.data().interest}</td>           
-    <td>${doc.data().quantity} pcs.</td>    
-    <td>Php ${doc.data().total}</td>
-    <td>${doc.data().available} pcs</td>
-    <td>Php ${doc.data().saleprice}</td>
-    <td>${doc.data().qsold} pcs</td>
-    <td>Php ${doc.data().sales}</td>
-    <td>Php ${(doc.data().saleprice * doc.data().quantity) - doc.data().total}</td>
-    <td>${doc.data().customer}</td>
-    <td>${doc.data().deliver}</td>
-    <td>${doc.data().contact}</td>           
+    <td>Php ${doc.data().selling_price}</td>
+    <td>${doc.data().quantity_sold} pcs</td>
+    <td>Php ${doc.data().sum}</td>
+    <td>${doc.id}</td>
     <td>${doc.data().date}</td>
     </tr>`)
 
-
-    //when button with name delete is clicked, delete the document
     $("[name = 'delete']").click((e) => {
         e.stopImmediatePropagation();
         var id = e.target.id;
-        db.collection('inventories').doc(id).delete();
+        db.collection('sales').doc(id).delete();
         Swal.fire({
             position: 'center',
             icon: 'error',
@@ -37,7 +26,7 @@ function render(doc) {
 }
 
 //real time rendering of data
-db.collection('inventories').orderBy('total').onSnapshot(snapshot => {
+db.collection('sales').orderBy('date').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == "added") {
