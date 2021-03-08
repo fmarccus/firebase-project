@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Bookstore</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
+    <link rel="manifest" href="/logo/site.webmanifest">
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/flatly.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
+
+
+</head>
+
+<body class="pb-5">
+
+    <!-- Title bar -->
+    <section>
+        <nav class="navbar">
+            <a href="index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
+                    id="icon_logo"></i>PRIMER BOOKSTORE</a>
+
+        </nav>
+    </section>
+    <!-- End of Title bar -->
+
+    <!-- Login Form -->
+    <section class="mt-3 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mx-auto mb-2"><br><br>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="row">
+                                <div id="login_div" class="main-div">
+                                    <h4 class="card-title text-center">LOGIN</h4>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" name="email_field" id="email_field" class="form-control"
+                                                placeholder="Email" aria-describedby="helpId" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" name="password_field" id="password_field"
+                                                class="form-control" placeholder="Password" aria-describedby="helpId"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-2"><button class="btn btn-primary btn-block"
+                                            onclick="login()">Login</button></div>
+                                            
+
+                                    <div class="col-md-12 mb-2"><a button class="btn btn-info btn-block"
+                                           href="/registration.html" >Create New Account</a></div>
+                                            <hr>
+                                    <div class="col-md-12 mt-2">
+                                        <p class="text-muted text-small text-center">or</p>
+                                    </div>
+                                    
+                                    <div class="col-md-12"><button class="btn btn-danger btn-block mb-2"
+                                            onclick="googleSignIn()"><i class="fab fa-google me-1"></i>Sign in with
+                                            Google</button></div>
+                                    
+                                    <div class="col-md-12 mt-4" style="font-weight: bold; text-align: center;">
+                                        <a href="/index.html">LANDING PAGE</a>
+                                    </div>
+                                </div>
+
+                                <div id="user_div" class="loggedin-div text-center">
+                                    <h4 id="user_para"></h4>
+                                    <hr>
+                                    <ul uk-accordion class="accordion" style="position: inherit;">
+
+                                        <li class="uk-open">
+                                            <a class="uk-accordion-title" href="employees.html"><i
+                                                    class="fas fa-users text-primary me-3"></i>Manage Employees</a>
+                                            <div class="uk-accordion-content">
+                                                <p><a href="employees.html">Go to EMPLOYEES</a>
+                                                    <br>
+                                                    Manage the Employees of Primer Bookstore by adding, modifying, or
+                                                    deleting their data in efficient manner.
+                                                </p><br>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="uk-accordion-title" href="orders.html"><i
+                                                    class="fas fa-shopping-cart me-3 text-primary"></i>Pending
+                                                Orders</a>
+                                            <div class="uk-accordion-content">
+                                                <p><a href="orders.html">Go to ORDERS</a>
+                                                    <br>
+                                                    Keep track of the current items or products that are ordered by the
+                                                    bookstore.
+                                                </p><br>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="uk-accordion-title" href="inventories.html"><i
+                                                    class="fas fa-boxes me-3 text-primary"></i>Inventory</a>
+                                            <div class="uk-accordion-content">
+                                                <p><a href="inventories.html">Go to INVENTORY</a>
+                                                    <br>
+                                                    Check the current items or equipment in the inventory to examine its
+                                                    price, quantity,
+                                                    and projected profit.
+                                                </p><br>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="uk-accordion-title" href="orders.html"><i
+                                                    class="fas fa-dollar-sign me-3 text-primary"></i>Point of Sales</a>
+                                            <div class="uk-accordion-content">
+                                                <p><a href="orders.html">Go to POINT OF SALES</a>
+                                                    <br>
+                                                    Records the products ordered by the customer
+                                                </p><br>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="uk-accordion-title" href="orders.html"><i
+                                                    class="fas fa-history me-3 text-primary"></i>Sales History</a>
+                                            <div class="uk-accordion-content">
+                                                <p><a href="sales.html">Go to SALES HISTORY</a>
+                                                    <br>
+                                                    Display all the purchases made by customers of Primer Bookstore
+                                                </p><br>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="uk-accordion-title" href="tasks.html"><i
+                                                    class="fas fa-tasks me-3 text-primary"></i>Tasks/Meetings</a>
+                                            <div class="uk-accordion-content">
+                                                <p><a href="tasks.html">Go to TASKS/MEETINGS</a>
+                                                    <br>
+                                                    Create new tasks and other important business meeting to keep track
+                                                    of the important activities in the organization.
+                                                </p><br>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-danger btn-block mb-2" onclick="logout()">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Login Form -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="/javascripts/authentication.js"></script>
+    <script src="/javascripts/login.js"></script>
+
+
+
+</body>
+
+</html>

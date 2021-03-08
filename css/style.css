@@ -1,9 +1,9 @@
 #myInput {
    background-color: rgb(255, 255, 255);
-   border-width: 3px;
+   border-width: 2px;
    border-color: #5593da;
    border-radius: 8px;
-} 
+}
 
 #brand {
     color:    #fff;
@@ -14,10 +14,10 @@
 }
 
 #icon_logo {
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 .navbar {
-    background-color:   #2c2e30; /*ito gamit mo before 25476d  */
+    background-color:   #25476D;
 }
 .background-feedback {
     background-image: url('/images/bg-feedback.jpg');

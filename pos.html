@@ -25,19 +25,19 @@
     <link rel="stylesheet" href="/css/flatly.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/css/uikit.min.css" />
+
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script>
 
+
 </head>
 
 
-<body class="pb-5">
-
-
-    <!--Top bar-->
+<body>
     <section>
         <ul class="nav justify-content-end" style="background-color: #25476D;">
             <li class="nav-item mr-auto">
@@ -58,10 +58,10 @@
                 <a class="nav-link text-light" href="/miscellaneous/privacy.html">Privacy Policies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/feedback.html">Feedbacks</a>
+                <a class="nav-link text-light" href="/miscellaneous/contactus.html">Contact Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="/miscellaneous/contactus.html">Contact Us</a>
+                <a class="nav-link text-secondary" href="/miscellaneous/testimonials.html">Testimonials</a>
             </li>
         </ul>
     </section>
@@ -77,7 +77,7 @@
                             id="icon_logo"></i> Primer Bookstore</li>
 
                     <br>
-                    <li><a href="index.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
+                    <li><a href="admin.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-home me-3"></i>Home</a></li>
                     <li class="uk-nav-divider"></li>
                     <li><a href="employees.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
@@ -101,6 +101,20 @@
                     <li><a href="tasks.html" class="uk-margin-small-right" style="font-size: 16px; color: white;"><i
                                 class="fas fa-tasks me-3 text-light"></i>Tasks/Meetings</a></li>
                     <li class="uk-nav-divider"></li>
+                    <li class="uk-parent"> Feedbacks
+                        <ul class="uk-nav-sub">
+                            <li><a href="feedbacks.html" class="uk-margin-small-right"
+                                    style="font-size: 14px; color: white;"><i
+                                        class="fas fa-comments me-3 text-light"></i>Customer Feedbacks</a></li>
+                            <li><a href="published.html" class="uk-margin-small-right"
+                                    style="font-size: 14px; color: white;"><i
+                                        class="fas fa-comment-dots me-3"></i>Published
+                                    Feedbacks</a></li>
+                        </ul>
+
+
+                    </li>
+                    <li class="uk-nav-divider"></li>
                 </ul>
             </div>
         </div>
@@ -110,127 +124,52 @@
     <!-- Title bar -->
     <section>
         <nav class="navbar">
-            <a href="index.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
+            <a href="admin.html" id="brand" style="text-decoration: none;"><i class="fab fa-pinterest me-2 ml-5"
                     id="icon_logo"></i>PRIMER BOOKSTORE</a>
 
         </nav>
     </section>
     <!-- End of Title bar -->
+    <!--Create Purchase-->
+    <form id="formdata" method="post">
+        <input type="text" name="item" id="item" placeholder="item">
+        <br>
+        <input type="number" class="key" name="selling_price" id="selling_price" placeholder="selling_price">
+        <br>
+        <input type="number" class="key" name="quantity_sold" id="quantity_sold" placeholder="quantity_sold" step="1">
+        <br>
+        <input type="number" name="sum" id="sum" placeholder="sum" readonly>
+        <input type="hidden" name="document" id="document" placeholder="document">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <section class="mt-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center mb-4">Create New Purchase</h4>
-                                    <div class="row">
-                                        <div class="col-md-12 mb-2">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i
-                                                            class="fas fa-cubes"></i></span>
-                                                </div>
-                                                <input type="text" class="form-control" name="item" id="item"
-                                                    aria-describedby="helpId" placeholder="Item Ordered" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mb-2">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i
-                                                            class="fas fa-dollar-sign ms-1 me-1"></i></span>
-                                                </div>
-                                                <input type="text" class="form-control key" name="selling_price"
-                                                    id="selling_price" aria-describedby="helpId"
-                                                    placeholder="Selling price" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mb-2">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i
-                                                            class="fas fa-list-ol"></i></span>
-                                                </div>
-                                                <input type="number" class="form-control key" name="quantity_item"
-                                                    id="quantity_item" aria-describedby="helpId" placeholder="Quantity"
-                                                    required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mb-2">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1"><i
-                                                            class="fas fa-dollar-sign ms-1 me-1"></i></span>
-                                                </div>
-                                                <input type="number" class="form-control" name="sum" id="sum"
-                                                    aria-describedby="helpId" placeholder="Total" required readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <input type="hidden" id="document">
-                                        </div>
-                                        <div class="col-md-12 text-end">
-                                            <button id="btnsubmit" class="btn btn-primary btn-sm"
-                                                type="button">Done</button>
-                                        </div>
+        <br>
+        <button type="button" id="btnsubmit">Done</button>
+    </form>
+    <!--End of Create Purchase-->
+    <br>
+    <!--Data Table-->
+    <input type="search" name="myInput" id="myInput" placeholder="Search...">
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Item</th>
+                <th>Selling Price</th>
+                <th>Available</th>
+                <th>Unique ID</th>
+            </tr>
+        </thead>
+        <tbody id="datatable">
+
+        </tbody>
+    </table>
+    <!--End of DataTable-->
 
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </section>
-            </div>
-            <div class="col-md-8">
-                <!--Item List-->
-                <section class="mt-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card" style="background-color:rgb(255, 255, 255)">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-8 ml-auto">
-                                            <h4 class="card-title text-rightr"><i class="fas fa-list-ul me-3"></i>Items
-                                            </h4>
-                                        </div>
-                                        <div class="col-md-4 ml-auto"><input id="myInput" class="form-control"
-                                                type="text" placeholder="Search.."><br></div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table id="myTable"
-                                            class="table table-bordered table-hover table-inverse table-sm text-center">
-                                            <thead class="thead-inverse"
-                                                style="background-color: #32527B; color: white;">
-                                                <tr>
-                                                    <th>Action</th>
-                                                    <th>Item</th>
-                                                    <th>Selling Price</th>
-                                                    <th>Available</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="tabledata">
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--End of item list-->
-                <p class="back-top" style="font-size: 30px; text-align: right; position: relative;"><a href="#"> <i
-                    class="fas fa-arrow-circle-up text-info mr-3"></i></a></p>
-            </div>
-        </div>
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/connection.js"></script>
-    <script src="/javascripts/pointsales.js"></script>
     <script src="/javascripts/search.js"></script>
+    <script src="/javascripts/pos.js"></script>
     <script src="/javascripts/total.js"></script>
 </body>
 
